@@ -9,6 +9,7 @@ export type Project = {
   category: "Full-Stack" | "Frontend" | "Desktop" | "Mobile";
   githubUrl: string;
   liveUrl?: string;
+  image?: string;
   featured: boolean;
 };
 
@@ -17,9 +18,9 @@ export const projects: Project[] = [
     slug: "restaurant-review-platform",
     name: "Restaurant Review Platform",
     oneLiner:
-      "Full-stack restaurant discovery platform with geolocation search and OAuth2 authentication.",
+      "Restaurant discovery platform in progress: OAuth2 auth and photo storage work end-to-end; search/review APIs are still being built.",
     description:
-      "A restaurant discovery and review platform where users search restaurants by location on an interactive map, read and leave reviews, and browse admin-curated listings. Search is backed by Elasticsearch rather than a naive SQL LIKE query, and authentication runs through a self-hosted Keycloak instance using the OAuth2 authorization code flow, so the API validates real bearer tokens instead of a hand-rolled session system.",
+      "A restaurant discovery and review platform where users will search restaurants by location on an interactive map and read/leave reviews. Authentication runs through a self-hosted Keycloak instance using the OAuth2 authorization code flow, so the API validates real bearer tokens instead of a hand-rolled session system, and photo upload/storage is fully implemented. The Elasticsearch-backed restaurant and review domain (entities, repository, DTOs) is modeled, but the REST endpoints exposing restaurant search and review CRUD aren't wired up yet — verified by running the app locally rather than assumed from the code layout.",
     techStack: [
       "Next.js",
       "TypeScript",
@@ -33,15 +34,13 @@ export const projects: Project[] = [
       "Docker Compose",
     ],
     features: [
-      "Elasticsearch-backed restaurant search",
-      "Map-based browsing with OpenStreetMap",
-      "OAuth2 login via self-hosted Keycloak",
-      "Restaurant CRUD with photo upload/storage service",
-      "Review submission and browsing",
-      "Admin management page",
+      "OAuth2 login via self-hosted Keycloak (working end-to-end)",
+      "Photo upload/storage service (working end-to-end)",
+      "Map-based browsing UI with OpenStreetMap",
+      "Restaurant and review domain modeled for Elasticsearch (entities/repository in place, REST layer in progress)",
     ],
     architecture:
-      "REST API backend (Spring Boot) acting as an OAuth2 resource server, validating tokens issued by Keycloak; Next.js App Router frontend consuming the API through an axios service layer. Elasticsearch, Kibana, and Keycloak run as Docker Compose services.",
+      "Spring Boot backend acting as an OAuth2 resource server, validating tokens issued by Keycloak, with Elasticsearch and Kibana running as Docker Compose services; Next.js App Router frontend consuming the API through an axios service layer. The photo storage vertical slice (controller → service → repository) is complete; the restaurant/review vertical slice currently stops at the repository layer.",
     category: "Full-Stack",
     githubUrl: "https://github.com/Kumardeepsingh/Restaurant-Review-Platform",
     featured: true,
@@ -110,6 +109,7 @@ export const projects: Project[] = [
       "Layered Spring Boot REST API (controller/service/repository) with a custom JWT auth filter and MapStruct DTO mapping; React SPA frontend with an AuthContext managing session state.",
     category: "Full-Stack",
     githubUrl: "https://github.com/Kumardeepsingh/BlogApplication",
+    image: "/images/projects/blog-application.png",
     featured: true,
   },
   {
@@ -171,6 +171,7 @@ export const projects: Project[] = [
       "Procedural, file-per-page PHP (no framework) with shared database includes; the feature set — real Stripe and Zoom API integrations — is the strong part, while the lack of an MVC structure is a known trade-off worth being upfront about.",
     category: "Full-Stack",
     githubUrl: "https://github.com/Kumardeepsingh/PeerTutor",
+    image: "/images/projects/peertutor.png",
     featured: true,
   },
   {
@@ -188,6 +189,7 @@ export const projects: Project[] = [
     architecture: "Standard REST CRUD API (Spring Boot) with a Vite + React frontend.",
     category: "Full-Stack",
     githubUrl: "https://github.com/Kumardeepsingh/SpringBootTasksApplication",
+    image: "/images/projects/spring-boot-tasks.png",
     featured: false,
   },
   {

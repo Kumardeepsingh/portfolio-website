@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
@@ -37,6 +38,18 @@ export default async function ProjectDetailPage({
         </Badge>
       </div>
       <p className="mt-2 text-lg text-muted-foreground">{project.oneLiner}</p>
+
+      {project.image && (
+        <div className="relative mt-6 aspect-video w-full overflow-hidden rounded-lg border bg-muted">
+          <Image
+            src={project.image}
+            alt={`${project.name} screenshot`}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 768px) 100vw, 768px"
+          />
+        </div>
+      )}
 
       <div className="mt-6 flex flex-wrap gap-3">
         <Button asChild>

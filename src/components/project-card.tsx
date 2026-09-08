@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
@@ -7,7 +8,18 @@ import type { Project } from "@/data/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <Card className="group flex h-full flex-col justify-between transition-colors hover:border-primary/50">
+    <Card className="group flex h-full flex-col justify-between overflow-hidden transition-colors hover:border-primary/50 pt-0">
+      {project.image && (
+        <div className="relative aspect-video w-full overflow-hidden border-b bg-muted">
+          <Image
+            src={project.image}
+            alt={`${project.name} screenshot`}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 640px) 100vw, 50vw"
+          />
+        </div>
+      )}
       <CardHeader>
         <div className="flex items-center justify-between gap-2">
           <CardTitle className="text-lg">{project.name}</CardTitle>
