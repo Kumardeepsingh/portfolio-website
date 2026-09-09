@@ -6,28 +6,28 @@ import { siteConfig } from "@/lib/site-config";
 
 export function Hero() {
   return (
-    <section className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-24 sm:px-6 sm:py-32">
-      <p className="font-mono text-sm text-primary">
-        <span className="text-muted-foreground">$</span> whoami
+    <section className="mx-auto flex max-w-5xl flex-col items-start gap-6 px-4 py-28 sm:px-6 sm:py-40">
+      <p className="text-xs font-medium uppercase tracking-[0.3em] text-primary">
+        {siteConfig.role}
       </p>
-      <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+      <h1 className="font-serif text-5xl italic leading-[1.1] tracking-tight sm:text-7xl">
         {siteConfig.name}
       </h1>
-      <p className="max-w-2xl font-mono text-lg text-muted-foreground sm:text-xl">
-        {siteConfig.role} — {siteConfig.tagline}
+      <p className="max-w-xl text-lg text-muted-foreground sm:text-xl">
+        {siteConfig.tagline}
       </p>
-      <div className="flex flex-wrap items-center gap-3 pt-2">
-        <Button asChild>
+      <div className="flex flex-wrap items-center gap-4 pt-4">
+        <Button size="lg" className="rounded-full px-6" asChild>
           <Link href="/projects">
             View Projects <ArrowRight className="size-4" />
           </Link>
         </Button>
-        <Button variant="outline" asChild>
+        <Button size="lg" variant="outline" className="rounded-full px-6" asChild>
           <Link href={siteConfig.github} target="_blank">
             <GithubIcon className="size-4" /> GitHub
           </Link>
         </Button>
-        <Button variant="outline" asChild>
+        <Button size="lg" variant="ghost" className="rounded-full px-6" asChild>
           <Link href={`mailto:${siteConfig.email}`}>
             <Mail className="size-4" /> Contact
           </Link>

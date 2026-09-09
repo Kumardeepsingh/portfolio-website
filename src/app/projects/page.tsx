@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { ProjectCard } from "@/components/project-card";
+import { SectionHeading } from "@/components/section-heading";
 import { projects } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
@@ -16,22 +17,20 @@ export default function ProjectsPage() {
   );
 
   return (
-    <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
-      <h1 className="font-mono text-sm text-primary">
-        <span className="text-muted-foreground">#</span> all-projects
-      </h1>
-      <p className="mt-4 max-w-2xl text-muted-foreground">
+    <section className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
+      <SectionHeading eyebrow="Portfolio" heading="All Projects" />
+      <p className="mt-6 max-w-2xl text-muted-foreground sm:pl-12">
         Everything below is pulled directly from my GitHub — real dependencies, real
         architecture, no filler.
       </p>
 
-      <div className="mt-6 flex flex-wrap gap-2">
+      <div className="mt-6 flex flex-wrap gap-2 sm:pl-12">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setFilter(category)}
             className={cn(
-              "rounded-full border px-3 py-1 font-mono text-sm transition-colors",
+              "rounded-full border px-4 py-1.5 text-sm transition-colors",
               filter === category
                 ? "border-primary bg-primary text-primary-foreground"
                 : "border-border text-muted-foreground hover:text-foreground",
@@ -42,7 +41,7 @@ export default function ProjectsPage() {
         ))}
       </div>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+      <div className="mt-8 grid gap-6 sm:grid-cols-2">
         {filtered.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}

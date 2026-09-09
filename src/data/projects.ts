@@ -43,6 +43,7 @@ export const projects: Project[] = [
       "Spring Boot backend acting as an OAuth2 resource server, validating tokens issued by Keycloak, with Elasticsearch and Kibana running as Docker Compose services; Next.js App Router frontend consuming the API through an axios service layer. The photo storage vertical slice (controller → service → repository) is complete; the restaurant/review vertical slice currently stops at the repository layer.",
     category: "Full-Stack",
     githubUrl: "https://github.com/Kumardeepsingh/Restaurant-Review-Platform",
+    image: "/images/projects/restaurant-review-platform.jpg",
     featured: true,
   },
   {
@@ -76,6 +77,7 @@ export const projects: Project[] = [
       "Spring Boot REST API with DTOs/mappers backing a Vite + React 19 frontend split into attendee and organizer experiences; QR codes are generated server-side with ZXing and validated against the same backend when scanned client-side.",
     category: "Full-Stack",
     githubUrl: "https://github.com/Kumardeepsingh/An-Event-Ticket-Platform",
+    image: "/images/projects/event-ticket-platform.jpg",
     featured: true,
   },
   {
@@ -109,7 +111,7 @@ export const projects: Project[] = [
       "Layered Spring Boot REST API (controller/service/repository) with a custom JWT auth filter and MapStruct DTO mapping; React SPA frontend with an AuthContext managing session state.",
     category: "Full-Stack",
     githubUrl: "https://github.com/Kumardeepsingh/BlogApplication",
-    image: "/images/projects/blog-application.png",
+    image: "/images/projects/blog-application.jpg",
     featured: true,
   },
   {
@@ -141,6 +143,7 @@ export const projects: Project[] = [
       "Frontend-only SPA with a clean separation between components, data-fetching hooks, and Zod schemas; TanStack Query handles caching/loading/error states for all weather API calls.",
     category: "Frontend",
     githubUrl: "https://github.com/Kumardeepsingh/React-WeatherApp",
+    image: "/images/projects/react-weather-app.jpg",
     featured: true,
   },
   {
@@ -171,7 +174,7 @@ export const projects: Project[] = [
       "Procedural, file-per-page PHP (no framework) with shared database includes; the feature set — real Stripe and Zoom API integrations — is the strong part, while the lack of an MVC structure is a known trade-off worth being upfront about.",
     category: "Full-Stack",
     githubUrl: "https://github.com/Kumardeepsingh/PeerTutor",
-    image: "/images/projects/peertutor.png",
+    image: "/images/projects/peertutor.jpg",
     featured: true,
   },
   {
@@ -189,7 +192,7 @@ export const projects: Project[] = [
     architecture: "Standard REST CRUD API (Spring Boot) with a Vite + React frontend.",
     category: "Full-Stack",
     githubUrl: "https://github.com/Kumardeepsingh/SpringBootTasksApplication",
-    image: "/images/projects/spring-boot-tasks.png",
+    image: "/images/projects/spring-boot-tasks-application.jpg",
     featured: false,
   },
   {
@@ -208,6 +211,7 @@ export const projects: Project[] = [
     architecture: "MVC-style desktop app with Controller/DAO/Model/Service/View packages.",
     category: "Desktop",
     githubUrl: "https://github.com/Kumardeepsingh/ATM-Simulator",
+    image: "/images/projects/atm-simulator.jpg",
     featured: false,
   },
   {
@@ -226,6 +230,7 @@ export const projects: Project[] = [
     architecture: "JavaFX FXML-view + controller pattern with a dedicated model package for domain objects.",
     category: "Desktop",
     githubUrl: "https://github.com/Kumardeepsingh/TODS",
+    image: "/images/projects/tods.jpg",
     featured: false,
   },
   {
@@ -243,6 +248,7 @@ export const projects: Project[] = [
     architecture: "Standard Android Activity-based structure with RecyclerView adapters and a SQLite DbHandler.",
     category: "Mobile",
     githubUrl: "https://github.com/Kumardeepsingh/BudgetPlanner",
+    image: "/images/projects/budget-planner.jpg",
     featured: false,
   },
 ];

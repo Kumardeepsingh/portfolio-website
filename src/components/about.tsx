@@ -1,12 +1,11 @@
+import { SectionHeading } from "@/components/section-heading";
 import { siteConfig } from "@/lib/site-config";
 
 export function About() {
   return (
-    <section id="about" className="mx-auto max-w-5xl scroll-mt-20 px-4 py-16 sm:px-6">
-      <h2 className="font-mono text-sm text-primary">
-        <span className="text-muted-foreground">#</span> about
-      </h2>
-      <div className="mt-4 max-w-3xl space-y-4 text-muted-foreground">
+    <section id="about" className="mx-auto max-w-5xl scroll-mt-24 px-4 py-20 sm:px-6">
+      <SectionHeading eyebrow="Introduction" heading="About Me" />
+      <div className="mt-8 max-w-2xl space-y-4 text-muted-foreground sm:pl-12">
         <p>
           I&apos;m a third-year Bachelor of Technology in Information Technology student at{" "}
           {siteConfig.university}, maintaining a 3.89 GPA and Dean&apos;s Honor Roll standing.

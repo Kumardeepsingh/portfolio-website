@@ -20,20 +20,19 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="font-mono text-sm text-foreground">
-          <span className="text-muted-foreground">~/</span>
-          {siteConfig.name.toLowerCase().replace(/\s+/g, "")}
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
+      <div className="mx-auto flex h-20 max-w-5xl items-center justify-between px-4 sm:px-6">
+        <Link href="/" className="font-serif text-xl italic tracking-tight text-foreground">
+          {siteConfig.name}
         </Link>
 
-        <div className="flex items-center gap-2">
-          <nav className="hidden items-center gap-6 md:flex">
+        <div className="flex items-center gap-1">
+          <nav className="hidden items-center gap-8 md:flex">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-mono text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary"
               >
                 {link.label}
               </Link>
@@ -60,7 +59,7 @@ export function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-md px-2 py-2 font-mono text-sm text-muted-foreground hover:bg-accent hover:text-foreground"
+              className="rounded-md px-2 py-2.5 text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground hover:bg-accent hover:text-primary"
               onClick={() => setOpen(false)}
             >
               {link.label}

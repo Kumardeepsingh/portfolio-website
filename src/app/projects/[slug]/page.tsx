@@ -23,42 +23,42 @@ export default async function ProjectDetailPage({
   if (!project) notFound();
 
   return (
-    <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+    <article className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
       <Link
         href="/projects"
-        className="flex items-center gap-1 font-mono text-sm text-muted-foreground hover:text-foreground"
+        className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
       >
-        <ArrowLeft className="size-3.5" /> back to projects
+        <ArrowLeft className="size-3.5" /> Back to projects
       </Link>
 
       <div className="mt-6 flex items-start justify-between gap-4">
-        <h1 className="text-3xl font-bold tracking-tight">{project.name}</h1>
-        <Badge variant="outline" className="font-mono shrink-0">
+        <h1 className="font-serif text-4xl italic tracking-tight">{project.name}</h1>
+        <Badge variant="outline" className="rounded-full shrink-0">
           {project.category}
         </Badge>
       </div>
       <p className="mt-2 text-lg text-muted-foreground">{project.oneLiner}</p>
 
       {project.image && (
-        <div className="relative mt-6 aspect-video w-full overflow-hidden rounded-lg border bg-muted">
+        <div className="relative mt-6 aspect-video w-full overflow-hidden rounded-2xl border bg-muted">
           <Image
             src={project.image}
             alt={`${project.name} screenshot`}
             fill
-            className="object-cover object-top"
+            className="object-cover object-center"
             sizes="(max-width: 768px) 100vw, 768px"
           />
         </div>
       )}
 
       <div className="mt-6 flex flex-wrap gap-3">
-        <Button asChild>
+        <Button className="rounded-full px-6" asChild>
           <Link href={project.githubUrl} target="_blank">
             <GithubIcon className="size-4" /> View Code
           </Link>
         </Button>
         {project.liveUrl && (
-          <Button variant="outline" asChild>
+          <Button variant="outline" className="rounded-full px-6" asChild>
             <Link href={project.liveUrl} target="_blank">
               <ArrowUpRight className="size-4" /> Live Demo
             </Link>
@@ -66,31 +66,31 @@ export default async function ProjectDetailPage({
         )}
       </div>
 
-      <Separator className="my-8" />
+      <Separator className="my-10" />
 
       <section>
-        <h2 className="font-mono text-sm text-primary">
-          <span className="text-muted-foreground">#</span> overview
+        <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+          Overview
         </h2>
         <p className="mt-3 text-muted-foreground">{project.description}</p>
       </section>
 
-      <section className="mt-8">
-        <h2 className="font-mono text-sm text-primary">
-          <span className="text-muted-foreground">#</span> tech-stack
+      <section className="mt-10">
+        <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+          Tech Stack
         </h2>
         <div className="mt-3 flex flex-wrap gap-2">
           {project.techStack.map((tech) => (
-            <Badge key={tech} variant="secondary" className="font-mono">
+            <Badge key={tech} variant="secondary" className="rounded-full font-mono font-normal">
               {tech}
             </Badge>
           ))}
         </div>
       </section>
 
-      <section className="mt-8">
-        <h2 className="font-mono text-sm text-primary">
-          <span className="text-muted-foreground">#</span> key-features
+      <section className="mt-10">
+        <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+          Key Features
         </h2>
         <ul className="mt-3 list-inside list-disc space-y-1.5 text-muted-foreground">
           {project.features.map((feature) => (
@@ -99,9 +99,9 @@ export default async function ProjectDetailPage({
         </ul>
       </section>
 
-      <section className="mt-8">
-        <h2 className="font-mono text-sm text-primary">
-          <span className="text-muted-foreground">#</span> architecture
+      <section className="mt-10">
+        <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+          Architecture
         </h2>
         <p className="mt-3 text-muted-foreground">{project.architecture}</p>
       </section>
