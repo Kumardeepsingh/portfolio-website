@@ -19,7 +19,7 @@ export function About() {
       <div className="mt-8 max-w-2xl space-y-4 text-muted-foreground sm:pl-12">
         <p>
           I&apos;m a fourth-year Bachelor of Technology in Information Technology student at{" "}
-          {siteConfig.university}, in my final semester, maintaining a 3.89 GPA and Dean&apos;s
+          {siteConfig.university}, in my final semester, maintaining a 3.98 GPA and Dean&apos;s
           Honor Roll standing. I build full-stack web applications, and I&apos;ve gone out of my
           way to work with real infrastructure rather than toy setups: Elasticsearch-backed
           search, OAuth2/OIDC auth through self-hosted Keycloak, and live third-party
