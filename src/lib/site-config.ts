@@ -1,6 +1,5 @@
 export const siteConfig = {
-  // TODO: update if the actual deployed URL differs once live on Vercel
-  siteUrl: "https://portfolio-website.vercel.app",
+  siteUrl: "https://portfolio-website-kumardeep.vercel.app",
   name: "Kumardeep Singh",
   initials: "KS",
   role: "Software Engineer",
