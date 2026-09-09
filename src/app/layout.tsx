@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -22,8 +23,21 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.siteUrl),
   title: `${siteConfig.name} · ${siteConfig.role}`,
   description: siteConfig.tagline,
+  openGraph: {
+    title: `${siteConfig.name} · ${siteConfig.role}`,
+    description: siteConfig.tagline,
+    url: siteConfig.siteUrl,
+    siteName: siteConfig.name,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} · ${siteConfig.role}`,
+    description: siteConfig.tagline,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -38,6 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Nav />
           <main className="flex-1">{children}</main>
           <Footer />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

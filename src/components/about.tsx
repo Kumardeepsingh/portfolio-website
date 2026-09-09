@@ -1,3 +1,4 @@
+import { User } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
 import { education } from "@/data/education";
 import { siteConfig } from "@/lib/site-config";
@@ -14,7 +15,7 @@ export function About() {
       id="about"
       className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-5xl scroll-mt-24 flex-col justify-center px-4 py-20 sm:px-6"
     >
-      <SectionHeading eyebrow="Introduction" heading="About Me" />
+      <SectionHeading eyebrow="Introduction" heading="About Me" icon={User} />
       <div className="mt-8 max-w-2xl space-y-4 text-muted-foreground sm:pl-12">
         <p>
           I&apos;m a fourth-year Bachelor of Technology in Information Technology student at{" "}

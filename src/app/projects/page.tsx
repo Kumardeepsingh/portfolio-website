@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { Briefcase } from "lucide-react";
 import { ProjectCard } from "@/components/project-card";
 import { SectionHeading } from "@/components/section-heading";
 import { projects } from "@/data/projects";
@@ -18,7 +19,7 @@ export default function ProjectsPage() {
 
   return (
     <section className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
-      <SectionHeading eyebrow="Portfolio" heading="All Projects" />
+      <SectionHeading eyebrow="Portfolio" heading="All Projects" icon={Briefcase} />
       <p className="mt-6 max-w-2xl text-muted-foreground sm:pl-12">
         Everything below is pulled directly from my GitHub: real dependencies, real
         architecture, no filler.

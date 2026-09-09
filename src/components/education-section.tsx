@@ -9,7 +9,7 @@ export function EducationSection() {
       id="education"
       className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-5xl scroll-mt-24 flex-col justify-center px-4 py-20 sm:px-6"
     >
-      <SectionHeading eyebrow="Background" heading="Education" />
+      <SectionHeading eyebrow="Background" heading="Education" icon={GraduationCap} />
       <div className="mt-10 flex gap-6 sm:pl-12">
         <GraduationCap className="mt-2 size-8 shrink-0 text-primary" />
         <div>

@@ -11,7 +11,7 @@ export function ContactSection() {
       id="contact"
       className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-5xl scroll-mt-24 flex-col justify-center px-4 py-20 sm:px-6"
     >
-      <SectionHeading eyebrow="Let's Connect" heading="Get In Touch" />
+      <SectionHeading eyebrow="Let's Connect" heading="Get In Touch" icon={Mail} />
       <p className="mt-8 max-w-xl text-lg text-muted-foreground sm:pl-12">
         I&apos;m in my final semester at {siteConfig.university}, graduating December 2026, and
         actively looking for Software Engineer, Developer, and IT roles now. The fastest way to

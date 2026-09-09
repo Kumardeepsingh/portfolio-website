@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { Wrench } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
 import { getSkillIcon } from "@/lib/skill-icons";
 import { skillGroups } from "@/data/skills";
@@ -9,7 +10,7 @@ export function SkillsSection() {
       id="skills"
       className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-5xl scroll-mt-24 flex-col justify-center px-4 py-20 sm:px-6"
     >
-      <SectionHeading eyebrow="Toolkit" heading="Skills" />
+      <SectionHeading eyebrow="Toolkit" heading="Skills" icon={Wrench} />
       <p className="mt-6 max-w-xl text-muted-foreground sm:pl-12">
         What I reach for most, grouped by where it fits: languages, frameworks, data and
         infrastructure, and the tools that tie a project together.
