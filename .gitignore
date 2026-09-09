@@ -39,6 +39,9 @@ yarn-error.log*
 # editor/tooling state
 .claude/
 
+# personal reference docs, not site content
+/docs/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

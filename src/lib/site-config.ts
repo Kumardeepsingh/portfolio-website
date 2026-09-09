@@ -8,6 +8,6 @@ export const siteConfig = {
   location: "Surrey, BC",
   email: "KumardeepSingh@student.kpu.ca",
   github: "https://github.com/Kumardeepsingh",
-  linkedin: "", // TODO: add your LinkedIn profile URL
+  linkedin: "https://www.linkedin.com/in/kumardeepsingh/",
   university: "Kwantlen Polytechnic University",
 };
