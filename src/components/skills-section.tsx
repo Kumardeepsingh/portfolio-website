@@ -10,22 +10,26 @@ export function SkillsSection() {
       className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-5xl scroll-mt-24 flex-col justify-center px-4 py-20 sm:px-6"
     >
       <SectionHeading eyebrow="Toolkit" heading="Skills" />
-      <div className="mt-8 grid gap-8 sm:grid-cols-2 sm:pl-12">
+      <p className="mt-6 max-w-xl text-muted-foreground sm:pl-12">
+        What I reach for most, grouped by where it fits: languages, frameworks, data and
+        infrastructure, and the tools that tie a project together.
+      </p>
+      <div className="mt-10 grid gap-x-12 gap-y-12 sm:grid-cols-2 sm:pl-12">
         {skillGroups.map((group) => (
           <div key={group.category}>
             <h3 className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
               {group.category}
             </h3>
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-2.5">
               {group.skills.map((skill) => {
                 const Icon = getSkillIcon(skill);
                 return (
                   <Badge
                     key={skill}
                     variant="secondary"
-                    className="gap-1.5 rounded-full px-3 font-normal"
+                    className="h-8 gap-2 rounded-full px-4 text-sm font-normal [&>svg]:size-3.5!"
                   >
-                    <Icon className="size-3.5" />
+                    <Icon />
                     {skill}
                   </Badge>
                 );

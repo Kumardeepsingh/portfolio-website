@@ -6,33 +6,36 @@ export function useActiveSection(ids: string[]): string | null {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
-    const elements = ids
-      .map((id) => document.getElementById(id))
-      .filter((el): el is HTMLElement => el !== null);
+    const update = () => {
+      const viewportHeight = window.innerHeight;
 
-    if (elements.length === 0) return;
+      let bestId: string | null = null;
+      let bestVisible = 0;
 
-    const visibleIds = new Set<string>();
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            visibleIds.add(entry.target.id);
-          } else {
-            visibleIds.delete(entry.target.id);
-          }
+        const rect = el.getBoundingClientRect();
+        const visible = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+
+        if (visible > bestVisible) {
+          bestVisible = visible;
+          bestId = id;
         }
+      }
 
-        const firstVisible = ids.find((id) => visibleIds.has(id));
-        setActiveId(firstVisible ?? null);
-      },
-      { rootMargin: "-40% 0px -55% 0px", threshold: 0 },
-    );
+      setActiveId(bestVisible > 0 ? bestId : null);
+    };
 
-    elements.forEach((el) => observer.observe(el));
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
   }, [ids]);
 
   return activeId;

@@ -27,8 +27,8 @@ export function Nav() {
   const activeSection = useActiveSection(sectionIds);
 
   const isActive = (link: (typeof links)[number]) => {
-    if (link.href === "/projects") return pathname === "/projects";
     if (link.href === "/resume") return pathname === "/resume";
+    if (pathname === "/projects") return link.href === "/projects";
     return pathname === "/" && activeSection === link.id;
   };
 

@@ -1,4 +1,5 @@
 import { GraduationCap } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { SectionHeading } from "@/components/section-heading";
 import { education } from "@/data/education";
 
@@ -9,20 +10,33 @@ export function EducationSection() {
       className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-5xl scroll-mt-24 flex-col justify-center px-4 py-20 sm:px-6"
     >
       <SectionHeading eyebrow="Background" heading="Education" />
-      <div className="mt-8 flex gap-4 sm:pl-12">
-        <GraduationCap className="mt-1 size-6 shrink-0 text-primary" />
+      <div className="mt-10 flex gap-6 sm:pl-12">
+        <GraduationCap className="mt-2 size-8 shrink-0 text-primary" />
         <div>
-          <h3 className="font-serif text-xl italic">{education.degree}</h3>
-          <p className="text-sm text-muted-foreground">
+          <h3 className="font-serif text-3xl italic">{education.degree}</h3>
+          <p className="mt-2 text-muted-foreground">
             {education.institution} · {education.location}
           </p>
-          <p className="mt-1 text-sm text-muted-foreground">
+          <p className="mt-1 text-muted-foreground">
             {education.expected} · GPA {education.gpa} · {education.honors}
           </p>
-          <p className="mt-4 text-sm text-muted-foreground">
-            <span className="text-foreground">Relevant coursework: </span>
-            {education.coursework.join(", ")}
-          </p>
+
+          <div className="mt-8">
+            <p className="text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground">
+              Relevant Coursework
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2.5">
+              {education.coursework.map((course) => (
+                <Badge
+                  key={course}
+                  variant="secondary"
+                  className="h-8 rounded-full px-4 text-sm font-normal"
+                >
+                  {course}
+                </Badge>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
