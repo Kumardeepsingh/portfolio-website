@@ -7,7 +7,10 @@ import { featuredProjects } from "@/data/projects";
 
 export function FeaturedProjects() {
   return (
-    <section id="projects" className="mx-auto max-w-5xl scroll-mt-24 px-4 py-20 sm:px-6">
+    <section
+      id="projects"
+      className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-5xl scroll-mt-24 flex-col justify-center px-4 py-20 sm:px-6"
+    >
       <div className="flex flex-wrap items-center justify-between gap-4">
         <SectionHeading eyebrow="Portfolio" heading="Selected Work" />
         <Button variant="ghost" className="rounded-full" asChild>

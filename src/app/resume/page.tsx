@@ -32,7 +32,7 @@ export default function ResumePage() {
         </h2>
         <p className="mt-3 font-medium">{education.degree}</p>
         <p className="text-sm text-muted-foreground">
-          {education.institution}, {education.location} — {education.expected}
+          {education.institution}, {education.location} · {education.expected}
         </p>
         <p className="text-sm text-muted-foreground">
           GPA {education.gpa} · {education.honors}
@@ -78,7 +78,7 @@ export default function ResumePage() {
       </div>
 
       <p className="mt-12 text-xs text-muted-foreground print:hidden">
-        No resume.pdf uploaded yet — drop one into /public/resume.pdf to make the download
+        No resume.pdf uploaded yet. Drop one into /public/resume.pdf to make the download
         button work, or use your browser&apos;s Print → Save as PDF on this page.
       </p>
     </section>

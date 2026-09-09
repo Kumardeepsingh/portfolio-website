@@ -4,7 +4,10 @@ import { education } from "@/data/education";
 
 export function EducationSection() {
   return (
-    <section id="education" className="mx-auto max-w-5xl scroll-mt-24 px-4 py-20 sm:px-6">
+    <section
+      id="education"
+      className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-5xl scroll-mt-24 flex-col justify-center px-4 py-20 sm:px-6"
+    >
       <SectionHeading eyebrow="Background" heading="Education" />
       <div className="mt-8 flex gap-4 sm:pl-12">
         <GraduationCap className="mt-1 size-6 shrink-0 text-primary" />

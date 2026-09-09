@@ -20,7 +20,7 @@ export const projects: Project[] = [
     oneLiner:
       "Restaurant discovery platform in progress: OAuth2 auth and photo storage work end-to-end; search/review APIs are still being built.",
     description:
-      "A restaurant discovery and review platform where users will search restaurants by location on an interactive map and read/leave reviews. Authentication runs through a self-hosted Keycloak instance using the OAuth2 authorization code flow, so the API validates real bearer tokens instead of a hand-rolled session system, and photo upload/storage is fully implemented. The Elasticsearch-backed restaurant and review domain (entities, repository, DTOs) is modeled, but the REST endpoints exposing restaurant search and review CRUD aren't wired up yet — verified by running the app locally rather than assumed from the code layout.",
+      "A restaurant discovery and review platform where users will search restaurants by location on an interactive map and read/leave reviews. Authentication runs through a self-hosted Keycloak instance using the OAuth2 authorization code flow, so the API validates real bearer tokens instead of a hand-rolled session system, and photo upload/storage is fully implemented. The Elasticsearch-backed restaurant and review domain (entities, repository, DTOs) is modeled, but the REST endpoints exposing restaurant search and review CRUD aren't wired up yet (verified by running the app locally rather than assumed from the code layout).",
     techStack: [
       "Next.js",
       "TypeScript",
@@ -86,7 +86,7 @@ export const projects: Project[] = [
     oneLiner:
       "Full-stack blogging platform with JWT authentication and a rich-text editor.",
     description:
-      "A blogging platform with JWT-based authentication and a TipTap rich-text editor for composing posts. Post content is rendered through DOMPurify before it hits the DOM, so user-authored HTML can't be used to inject scripts — a deliberate XSS-safety decision rather than an afterthought.",
+      "A blogging platform with JWT-based authentication and a TipTap rich-text editor for composing posts. Post content is rendered through DOMPurify before it hits the DOM, so user-authored HTML can't be used to inject scripts, a deliberate XSS-safety decision rather than an afterthought.",
     techStack: [
       "React 18",
       "Vite",
@@ -171,7 +171,7 @@ export const projects: Project[] = [
       "Admin dashboard for users, tutors, and reports",
     ],
     architecture:
-      "Procedural, file-per-page PHP (no framework) with shared database includes; the feature set — real Stripe and Zoom API integrations — is the strong part, while the lack of an MVC structure is a known trade-off worth being upfront about.",
+      "Procedural, file-per-page PHP (no framework) with shared database includes; the feature set, real Stripe and Zoom API integrations, is the strong part, while the lack of an MVC structure is a known trade-off worth being upfront about.",
     category: "Full-Stack",
     githubUrl: "https://github.com/Kumardeepsingh/PeerTutor",
     image: "/images/projects/peertutor.jpg",
@@ -216,7 +216,7 @@ export const projects: Project[] = [
   },
   {
     slug: "tods",
-    name: "TODS — Tiffin Ordering & Delivery System",
+    name: "TODS: Tiffin Ordering & Delivery System",
     oneLiner: "JavaFX desktop app for managing school tiffin orders and deliveries.",
     description:
       "A point-of-sale style desktop app for managing school tiffin orders: parents place and view orders while admins manage students, meals, drivers, and order status, backed by MySQL through JDBC.",
@@ -238,7 +238,7 @@ export const projects: Project[] = [
     name: "Budget Planner",
     oneLiner: "Native Android app for tracking income, expenses, and bill reminders.",
     description:
-      "A native Android app for logging income and expenses, viewing transaction history, and getting notified before bills are due — fully offline, backed by local SQLite storage.",
+      "A native Android app for logging income and expenses, viewing transaction history, and getting notified before bills are due, running fully offline and backed by local SQLite storage.",
     techStack: ["Java", "Android SDK", "SQLite"],
     features: [
       "Expense/income logging with transaction history",

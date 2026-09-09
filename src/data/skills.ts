@@ -6,7 +6,7 @@ export type SkillGroup = {
 export const skillGroups: SkillGroup[] = [
   {
     category: "Languages",
-    skills: ["Java", "Python", "JavaScript", "TypeScript", "SQL", "PHP", "HTML/CSS"],
+    skills: ["Java", "Python", "JavaScript", "TypeScript", "SQL", "PHP", "HTML5", "CSS3"],
   },
   {
     category: "Frameworks & Libraries",

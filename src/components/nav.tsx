@@ -1,23 +1,36 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { useActiveSection } from "@/hooks/use-active-section";
 import { siteConfig } from "@/lib/site-config";
+import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "/#about", label: "About" },
-  { href: "/#skills", label: "Skills" },
-  { href: "/projects", label: "Projects" },
-  { href: "/#education", label: "Education" },
-  { href: "/resume", label: "Resume" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#about", label: "About", id: "about" },
+  { href: "/#skills", label: "Skills", id: "skills" },
+  { href: "/projects", label: "Projects", id: "projects" },
+  { href: "/#education", label: "Education", id: "education" },
+  { href: "/resume", label: "Resume", id: null },
+  { href: "/#contact", label: "Contact", id: "contact" },
 ];
+
+const sectionIds = ["about", "skills", "projects", "education", "contact"];
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const activeSection = useActiveSection(sectionIds);
+
+  const isActive = (link: (typeof links)[number]) => {
+    if (link.href === "/projects") return pathname === "/projects";
+    if (link.href === "/resume") return pathname === "/resume";
+    return pathname === "/" && activeSection === link.id;
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
@@ -32,7 +45,12 @@ export function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary"
+                className={cn(
+                  "text-xs font-medium uppercase tracking-[0.15em] transition-colors hover:text-primary",
+                  isActive(link)
+                    ? "text-primary underline underline-offset-4 decoration-primary/60"
+                    : "text-muted-foreground",
+                )}
               >
                 {link.label}
               </Link>
@@ -59,7 +77,10 @@ export function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-md px-2 py-2.5 text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground hover:bg-accent hover:text-primary"
+              className={cn(
+                "rounded-md px-2 py-2.5 text-xs font-medium uppercase tracking-[0.15em] hover:bg-accent hover:text-primary",
+                isActive(link) ? "text-primary" : "text-muted-foreground",
+              )}
               onClick={() => setOpen(false)}
             >
               {link.label}

@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export function Hero() {
   return (
-    <section className="mx-auto flex max-w-5xl flex-col items-start gap-6 px-4 py-28 sm:px-6 sm:py-40">
+    <section className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-5xl flex-col items-start justify-center gap-6 px-4 py-16 sm:px-6">
       <p className="text-xs font-medium uppercase tracking-[0.3em] text-primary">
         {siteConfig.role}
       </p>

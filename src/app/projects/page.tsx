@@ -20,7 +20,7 @@ export default function ProjectsPage() {
     <section className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
       <SectionHeading eyebrow="Portfolio" heading="All Projects" />
       <p className="mt-6 max-w-2xl text-muted-foreground sm:pl-12">
-        Everything below is pulled directly from my GitHub — real dependencies, real
+        Everything below is pulled directly from my GitHub: real dependencies, real
         architecture, no filler.
       </p>
 

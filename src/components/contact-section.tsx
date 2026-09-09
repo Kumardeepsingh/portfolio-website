@@ -7,11 +7,14 @@ import { siteConfig } from "@/lib/site-config";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="mx-auto max-w-5xl scroll-mt-24 px-4 py-20 sm:px-6">
+    <section
+      id="contact"
+      className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-5xl scroll-mt-24 flex-col justify-center px-4 py-20 sm:px-6"
+    >
       <SectionHeading eyebrow="Let's Connect" heading="Get In Touch" />
       <p className="mt-8 max-w-xl text-muted-foreground sm:pl-12">
         I&apos;m actively looking for Software Engineer, Developer, and IT roles. The fastest
-        way to reach me is email — feel free to reach out about opportunities or just to talk
+        way to reach me is email. Feel free to reach out about opportunities or just to talk
         about any of the projects above.
       </p>
       <div className="mt-6 flex flex-wrap items-center gap-4 sm:pl-12">
