@@ -76,11 +76,6 @@ export default function ResumePage() {
             ))}
         </div>
       </div>
-
-      <p className="mt-12 text-xs text-muted-foreground print:hidden">
-        No resume.pdf uploaded yet. Drop one into /public/resume.pdf to make the download
-        button work, or use your browser&apos;s Print → Save as PDF on this page.
-      </p>
     </section>
   );
 }

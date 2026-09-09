@@ -15,7 +15,7 @@ export function ProjectCard({ project }: { project: Project }) {
             src={project.image}
             alt={`${project.name} screenshot`}
             fill
-            className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+            className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 640px) 100vw, 50vw"
           />
         </div>

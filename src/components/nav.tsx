@@ -45,6 +45,7 @@ export function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={isActive(link) ? "page" : undefined}
                 className={cn(
                   "text-xs font-medium uppercase tracking-[0.15em] transition-colors hover:text-primary",
                   isActive(link)
@@ -77,6 +78,7 @@ export function Nav() {
             <Link
               key={link.href}
               href={link.href}
+              aria-current={isActive(link) ? "page" : undefined}
               className={cn(
                 "rounded-md px-2 py-2.5 text-xs font-medium uppercase tracking-[0.15em] hover:bg-accent hover:text-primary",
                 isActive(link) ? "text-primary" : "text-muted-foreground",
